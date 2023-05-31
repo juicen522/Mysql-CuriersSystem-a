@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+    <link href="css/login.css" rel="stylesheet">
+</head>
+
+<body>
+<div id="loginDiv">
+    <form method="get" id="form">
+        <h1 id="loginMsg">用户登录</h1>
+        <p><label for="username">用户名:</label><input id="username" name="username" type="text"></p>
+        <p><label for="password">密码:</label><input id="password" name="password" type="password"></p>
+
+        <div id="subDiv">
+            <input type="submit" class="button" id="studentSubmit" value="学生登录">
+            <input type="submit" class="button" id="teacherSubmit" value="老师登录">
+            <input type="reset" class="button" value="重置">&nbsp;&nbsp;&nbsp;
+        </div>
+    </form>
+</div>
+
+</body>
+
+<script>
+    // 获取表单元素和提交按钮
+    const form = document.getElementById('form');
+    const studentSubmit = document.getElementById('studentSubmit');
+    const teacherSubmit = document.getElementById('teacherSubmit');
+
+    // 添加学生提交按钮的点击事件监听器
+    studentSubmit.addEventListener('click', function(event) {
+        //获取前端输入的son和密码
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+
+        event.preventDefault(); // 阻止表单的默认提交行为
+        // 执行学生提交操作
+        form.action = 'http://localhost:8080/education-system-demo/login/selectBySnoPassword'; // 设置表单的提交地址为学生 Servlet 的 URL
+        // 发送异步请求
+        fetch(form.action + `?username=${username}&password=${password}`)
+            .then(response => response.text())
+            .then(data => {
+                if(username === "" && password === ""){
+                    alert("用户名和密码不能为空");
+                }else if (data.length > 20) {
+                    // 跳转到其他页面，并携带参数
+                    const encodedUsername = encodeURIComponent(username);
+                    const encodedPassword = encodeURIComponent(password);
+
+                    //跳转到学生界面-------------------------------------------------
+                    window.location.href = 'http://localhost:8081/#/test?username=' + encodedUsername + '&password=' + encodedPassword;
+                } else {
+                    alert("未查询到相关信息");
+                }
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    });
+
+    // 添加老师提交按钮的点击事件监听器
+    teacherSubmit.addEventListener('click', function(event) {
+        //获取前端输入的son和密码
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        event.preventDefault(); // 阻止表单的默认提交行为
+
+//        执行学生提交操作
+        form.action = 'http://localhost:8080/education-system-demo/system/selectByTnoPassword'; // 设置表单的提交地址为学生 Servlet 的 URL
+        // 发送异步请求
+        fetch(form.action + `?username=${username}&password=${password}`)
+            .then(response => response.text())
+            .then(data => {
+                if(username === "" && password === ""){
+                    alert("用户名和密码不能为空");
+                }else if (data.length > 20) {
+                    // 跳转到其他页面，并携带参数
+                    const encodedUsername = encodeURIComponent(username);
+                    const encodedPassword = encodeURIComponent(password);
+
+                    //跳转到老师界面----------------------------------------
+                    window.location.href = 'http://localhost:8081/#/Demo?username=' + encodedUsername + '&password=' + encodedPassword;
+                } else {
+                    alert("未查询到相关信息");
+                }
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    });
+
+</script>
+</html>

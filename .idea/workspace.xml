@@ -10,15 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9216ab9d-340e-4d7e-a184-7995d44c7dae" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/itShuai/service/DeliveryService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/itShuai/service/impl/DeliveryServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/itShuai/mapper/DeliveryMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/itShuai/mapper/DeliveryMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itShuai/mapper/DeliveryMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/itShuai/web/User/SystemServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itShuai/web/User/SystemServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itShuai/mapper/DeliveryMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itShuai/mapper/DeliveryMapper.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/itShuai/web/User/SystemServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itShuai/web/User/SystemServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -279,7 +271,7 @@
       <workItem from="1685516073942" duration="378000" />
       <workItem from="1685517160525" duration="691000" />
       <workItem from="1685519766792" duration="1113000" />
-      <workItem from="1685599186193" duration="2973000" />
+      <workItem from="1685599186193" duration="3279000" />
     </task>
     <task id="LOCAL-00001" summary="测试提交">
       <created>1685516162377</created>
@@ -323,7 +315,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685600747397</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="用户通过账号登录请求">
+      <created>1685605471033</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1685605471033</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -347,8 +346,8 @@
     <MESSAGE value="管理员登录--已完成" />
     <MESSAGE value="解决数据库驱动问题" />
     <MESSAGE value="管理员账号或密码错误返回值修改为null" />
-    <MESSAGE value="用户通过账号登录请求" />
-    <option name="LAST_COMMIT_MESSAGE" value="用户通过账号登录请求" />
+    <MESSAGE value="根据快递id获取快递全部信息" />
+    <option name="LAST_COMMIT_MESSAGE" value="根据快递id获取快递全部信息" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

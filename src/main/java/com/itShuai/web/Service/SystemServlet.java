@@ -1,6 +1,7 @@
 package com.itShuai.web.Service;
 
 import com.alibaba.fastjson.JSON;
+import com.itShuai.pojo.Account;
 import com.itShuai.pojo.Admin;
 import com.itShuai.pojo.User;
 import com.itShuai.service.AdminService;
@@ -12,6 +13,7 @@ import com.itShuai.web.BaseServlet;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.swing.*;
 import java.io.IOException;
 
 @WebServlet("/*")
@@ -45,6 +47,19 @@ public class SystemServlet extends BaseServlet {
             response.getWriter().write("null");
         }else {
             String jsonString = JSON.toJSONString(admin);
+            response.setContentType("application/json;charset=utf-8");
+            response.getWriter().write(jsonString);
+        }
+    }
+    public void LoginAsUser(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        String allowedOrigin = "*";
+        response = ResolveCrossdomainRequests(response,allowedOrigin);
+        Account account = userService.LoginAsUser(request.getParameter("Phone"),request.getParameter("Password"));
+        System.out.println(account);
+        if (account==null){
+            response.getWriter().write("null");
+        }else {
+            String jsonString = JSON.toJSONString(account);
             response.setContentType("application/json;charset=utf-8");
             response.getWriter().write(jsonString);
         }

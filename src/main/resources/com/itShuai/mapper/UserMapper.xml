@@ -8,7 +8,9 @@
     <select id="selectUserId" resultType="com.itShuai.pojo.User">
         select * from user where UserId=#{UserId};
     </select>
-
+    <select id="LoginAsUser" resultType="com.itShuai.pojo.Account">
+        select * from account where Phone=#{Phone} and Password=#{Password};
+    </select>
 
 
 </mapper>

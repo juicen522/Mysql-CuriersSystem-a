@@ -11,8 +11,22 @@
   <component name="ChangeListManager">
     <list default="true" id="9216ab9d-340e-4d7e-a184-7995d44c7dae" name="变更" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/itShuai/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itShuai/mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/itShuai/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itShuai/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/itShuai/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itShuai/service/impl/UserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/itShuai/web/Service/SystemServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itShuai/web/Service/SystemServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/itShuai/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/itShuai/mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itShuai/mapper/AccountMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itShuai/mapper/AccountMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itShuai/mapper/AdminMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itShuai/mapper/AdminMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itShuai/mapper/DeliveryMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itShuai/mapper/DeliveryMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itShuai/mapper/DeliveryStatusMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itShuai/mapper/StationMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itShuai/mapper/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itShuai/mapper/UserMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itShuai/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itShuai/mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itShuai/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itShuai/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itShuai/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itShuai/service/impl/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itShuai/web/User/SystemServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -275,7 +289,7 @@
       <workItem from="1685519766792" duration="1113000" />
       <workItem from="1685599186193" duration="3856000" />
       <workItem from="1685608050101" duration="528000" />
-      <workItem from="1685608975510" duration="2816000" />
+      <workItem from="1685608975510" duration="4429000" />
     </task>
     <task id="LOCAL-00001" summary="测试提交">
       <created>1685516162377</created>
@@ -340,7 +354,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685611364215</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="用户登录账号">
+      <created>1685611930991</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1685611930991</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -366,7 +387,8 @@
     <MESSAGE value="管理员账号或密码错误返回值修改为null" />
     <MESSAGE value="删除无用文件" />
     <MESSAGE value="项目结构改变" />
-    <option name="LAST_COMMIT_MESSAGE" value="项目结构改变" />
+    <MESSAGE value="用户登录账号" />
+    <option name="LAST_COMMIT_MESSAGE" value="用户登录账号" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

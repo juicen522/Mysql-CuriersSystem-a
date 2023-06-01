@@ -29,10 +29,10 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void RegisterUserCount(String Phone, String Password, String Name, String Sex, String Address) {
+    public void RegisterUserAccount(String Phone, String Password, String Name, String Sex, String Address) {
         SqlSession sqlSession = sqlSessionFactory.openSession();
         UserMapper mapper = sqlSession.getMapper(UserMapper.class);
-        mapper.RegisterUserCount(Phone,Password,Name,Sex,Address);
+        mapper.RegisterUserAccount(Phone,Password,Name,Sex,Address);
     }
 
     @Override

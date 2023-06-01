@@ -11,6 +11,12 @@
     <select id="LoginAsUser" resultType="com.itShuai.pojo.Account">
         select * from account where Phone=#{Phone} and Password=#{Password};
     </select>
-
+    <insert id="RegisterUserAccount">
+        insert into user(sex, name, address) VALUES (#{Sex},#{Name},#{Address});
+        insert into account (Phone,Password,UserId) values(#{Phone},#{Password},#{UserId});
+    </insert>
+    <select id="AllRecDelivery" resultType="com.itShuai.pojo.Delivery">
+        select * from delivery where RecipientId=#{RecipientId};
+    </select>
 
 </mapper>

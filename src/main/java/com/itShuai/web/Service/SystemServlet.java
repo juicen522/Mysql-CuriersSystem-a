@@ -3,6 +3,7 @@ package com.itShuai.web.Service;
 import com.alibaba.fastjson.JSON;
 import com.itShuai.pojo.Account;
 import com.itShuai.pojo.Admin;
+import com.itShuai.pojo.Delivery;
 import com.itShuai.pojo.User;
 import com.itShuai.service.AdminService;
 import com.itShuai.service.UserService;
@@ -15,6 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.swing.*;
 import java.io.IOException;
+import java.util.List;
 
 @WebServlet("/*")
 public class SystemServlet extends BaseServlet {
@@ -22,8 +24,7 @@ public class SystemServlet extends BaseServlet {
     private AdminService adminService = new AdminServiceImpl();
 
     public void selectById(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        String allowedOrigin = "*";
-        response = ResolveCrossdomainRequests(response,allowedOrigin);
+        response = ResolveCrossdomainRequests(response);
         User user = userService.selectUserId(Integer.valueOf(request.getParameter("id")));
         System.out.println(user);
         if(user == null){
@@ -39,8 +40,7 @@ public class SystemServlet extends BaseServlet {
     }
     public void LoginAsAdmin(HttpServletRequest request, HttpServletResponse response) throws IOException {
         //解决跨域请求
-        String allowedOrigin = "*";
-        response = ResolveCrossdomainRequests(response,allowedOrigin);
+        response = ResolveCrossdomainRequests(response);
         Admin admin = adminService.LoginAsAdmin(request.getParameter("Account"),request.getParameter("Password"));
         System.out.println(admin);
         if (admin==null){
@@ -52,8 +52,7 @@ public class SystemServlet extends BaseServlet {
         }
     }
     public void LoginAsUser(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        String allowedOrigin = "*";
-        response = ResolveCrossdomainRequests(response,allowedOrigin);
+        response = ResolveCrossdomainRequests(response);
         Account account = userService.LoginAsUser(request.getParameter("Phone"),request.getParameter("Password"));
         System.out.println(account);
         if (account==null){
@@ -64,7 +63,20 @@ public class SystemServlet extends BaseServlet {
             response.getWriter().write(jsonString);
         }
     }
-    public HttpServletResponse ResolveCrossdomainRequests(HttpServletResponse response,String allowedOrigin){
+    public void AllRecDelivery(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        response = ResolveCrossdomainRequests(response);
+        List<Delivery> deliveries = userService.AllRecDelivery(Integer.valueOf(request.getParameter("UserId")));
+        System.out.println(deliveries);
+        if (deliveries.isEmpty()){
+            response.getWriter().write("null");
+        }else {
+            String jsonString = JSON.toJSONString(deliveries);
+            response.setContentType("application/json;charset=utf-8");
+            response.getWriter().write(jsonString);
+        }
+    }
+    public HttpServletResponse ResolveCrossdomainRequests(HttpServletResponse response){
+        String allowedOrigin = "*";
         response.setHeader("Access-Control-Allow-Origin", allowedOrigin);
         response.setHeader("Access-Control-Allow-Methods", "GET, POST");
         response.setHeader("Access-Control-Allow-Headers", "Content-Type");

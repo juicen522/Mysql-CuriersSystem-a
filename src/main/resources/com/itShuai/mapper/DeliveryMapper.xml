@@ -5,9 +5,6 @@
 
 <mapper namespace="com.itShuai.mapper.DeliveryMapper">
 
-    <select id="GetDeliveryInfo" resultType="com.itShuai.pojo.Delivery">
-        select * from Delivery where DeliveryId=#{DeliveryId};
-    </select>
 
 
 </mapper>

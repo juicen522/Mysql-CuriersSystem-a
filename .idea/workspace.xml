@@ -10,7 +10,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9216ab9d-340e-4d7e-a184-7995d44c7dae" name="变更" comment="">
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itShuai/web/User/SystemServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itShuai/web/User/SystemServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d45be484-ffb7-41c4-8a33-0f6934e747fa.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d45be484-ffb7-41c4-8a33-0f6934e747fa/storage_v2/_src_/schema/couriersystem.nFp3jQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d45be484-ffb7-41c4-8a33-0f6934e747fa/storage_v2/_src_/schema/couriersystem.nFp3jQ.zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d45be484-ffb7-41c4-8a33-0f6934e747fa/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d45be484-ffb7-41c4-8a33-0f6934e747fa/storage_v2/_src_/schema/mysql.osA4Bg.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d45be484-ffb7-41c4-8a33-0f6934e747fa/storage_v2/_src_/schema/performance_schema.kIw0nw.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d45be484-ffb7-41c4-8a33-0f6934e747fa/storage_v2/_src_/schema/sys.zb4BAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/itShuai/mapper/AccountMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itShuai/mapper/AccountMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/itShuai/mapper/AdminMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itShuai/mapper/AdminMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/itShuai/mapper/DeliveryMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itShuai/mapper/DeliveryMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/itShuai/mapper/DeliveryStatusMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/itShuai/mapper/StationMapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/itShuai/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itShuai/mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/itShuai/service/AccountService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/itShuai/service/DeliveryService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/itShuai/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itShuai/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/itShuai/service/impl/AccountServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/itShuai/service/impl/DeliveryServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/itShuai/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itShuai/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/itShuai/web/User/SystemServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itShuai/web/Service/SystemServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/itShuai/mapper/AccountMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/itShuai/mapper/AccountMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/itShuai/mapper/DeliveryMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/itShuai/mapper/DeliveryMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/itShuai/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/itShuai/mapper/UserMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,8 +45,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Tag Library Descriptor" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -72,7 +96,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "ToolWindow运行.ShowToolbar": "false",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/Mliu/Desktop/education-system-demo/src/main/resources/com/itShuai/mapper",
+    "last_opened_file_path": "D:/QQ_Data/2206221643/FileRecv/system-demo-123",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -271,7 +295,9 @@
       <workItem from="1685516073942" duration="378000" />
       <workItem from="1685517160525" duration="691000" />
       <workItem from="1685519766792" duration="1113000" />
-      <workItem from="1685599186193" duration="3279000" />
+      <workItem from="1685599186193" duration="3856000" />
+      <workItem from="1685608050101" duration="528000" />
+      <workItem from="1685608975510" duration="2359000" />
     </task>
     <task id="LOCAL-00001" summary="测试提交">
       <created>1685516162377</created>
@@ -322,7 +348,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685605471033</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="根据快递id获取快递全部信息">
+      <created>1685605869095</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1685605869095</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -346,8 +379,8 @@
     <MESSAGE value="管理员登录--已完成" />
     <MESSAGE value="解决数据库驱动问题" />
     <MESSAGE value="管理员账号或密码错误返回值修改为null" />
-    <MESSAGE value="根据快递id获取快递全部信息" />
-    <option name="LAST_COMMIT_MESSAGE" value="根据快递id获取快递全部信息" />
+    <MESSAGE value="删除无用文件" />
+    <option name="LAST_COMMIT_MESSAGE" value="删除无用文件" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

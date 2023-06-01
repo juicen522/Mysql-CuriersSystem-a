@@ -5,8 +5,6 @@
 
 <mapper namespace="com.itShuai.mapper.AccountMapper">
 
-    <select id="LoginAsUser" resultType="com.itShuai.pojo.Account">
-        select * from account where Phone=#{Phone} and Password=#{Password};
-    </select>
+
 
 </mapper>

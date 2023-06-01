@@ -10,8 +10,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9216ab9d-340e-4d7e-a184-7995d44c7dae" name="变更" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/itShuai/web/User/SystemServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itShuai/web/User/SystemServlet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -271,7 +270,7 @@
       <workItem from="1685516073942" duration="378000" />
       <workItem from="1685517160525" duration="691000" />
       <workItem from="1685519766792" duration="1113000" />
-      <workItem from="1685599186193" duration="320000" />
+      <workItem from="1685599186193" duration="451000" />
     </task>
     <task id="LOCAL-00001" summary="测试提交">
       <created>1685516162377</created>
@@ -294,7 +293,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685599502831</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="解决数据库驱动问题">
+      <created>1685599560754</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1685599560754</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -316,7 +322,8 @@
     <MESSAGE value="测试提交" />
     <MESSAGE value="测试" />
     <MESSAGE value="管理员登录--已完成" />
-    <option name="LAST_COMMIT_MESSAGE" value="管理员登录--已完成" />
+    <MESSAGE value="解决数据库驱动问题" />
+    <option name="LAST_COMMIT_MESSAGE" value="解决数据库驱动问题" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

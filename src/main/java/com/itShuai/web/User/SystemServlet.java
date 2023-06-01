@@ -49,7 +49,7 @@ public class SystemServlet extends BaseServlet {
         Admin admin = adminService.LoginAsAdmin(request.getParameter("Account"),request.getParameter("Password"));
         System.out.println(admin);
         if (admin==null){
-            response.getWriter().write(" ");
+            response.getWriter().write("null");
         }else {
             String jsonString = JSON.toJSONString(admin);
             response.setContentType("application/json;charset=utf-8");

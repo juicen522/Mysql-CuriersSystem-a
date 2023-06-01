@@ -10,7 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9216ab9d-340e-4d7e-a184-7995d44c7dae" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/ReadME.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,10 +40,13 @@
     <option name="FILTER_DEBUG" value="true" />
     <option name="CUSTOM_FILTER" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
-        <option name="mavenHome" value="D:/Maven/apache-maven-3.9.2" />
+        <option name="mavenHome" value="$PROJECT_DIR$/../Maven/apache-maven-3.9.2" />
         <option name="useMavenConfig" value="true" />
         <option name="userSettingsFile" value="D:\Maven\apache-maven-3.9.2\conf\settings.xml" />
       </MavenGeneralSettings>
@@ -66,7 +70,6 @@
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;ToolWindow运行.ShowToolbar&quot;: &quot;false&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/Mliu/Desktop/education-system-demo/src/main/resources/com/itShuai/mapper&quot;,
@@ -266,6 +269,9 @@
       <workItem from="1685510019712" duration="263000" />
       <workItem from="1685510296043" duration="3199000" />
       <workItem from="1685516073942" duration="378000" />
+      <workItem from="1685517160525" duration="691000" />
+      <workItem from="1685519766792" duration="1113000" />
+      <workItem from="1685599186193" duration="320000" />
     </task>
     <task id="LOCAL-00001" summary="测试提交">
       <created>1685516162377</created>
@@ -274,7 +280,21 @@
       <option name="project" value="LOCAL" />
       <updated>1685516162377</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="测试">
+      <created>1685517407070</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1685517407070</updated>
+    </task>
+    <task id="LOCAL-00003" summary="管理员登录--已完成">
+      <created>1685599502831</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1685599502831</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -294,7 +314,9 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="测试提交" />
-    <option name="LAST_COMMIT_MESSAGE" value="测试提交" />
+    <MESSAGE value="测试" />
+    <MESSAGE value="管理员登录--已完成" />
+    <option name="LAST_COMMIT_MESSAGE" value="管理员登录--已完成" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

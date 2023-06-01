@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.itShuai.mapper.AdminMapper">
+
+    <select id="LoginAsAdmin" resultType="com.itShuai.pojo.Admin">
+        select * from couriersystem.admin where Account=#{Account} and Password=#{Password};
+    </select>
+
+
+</mapper>

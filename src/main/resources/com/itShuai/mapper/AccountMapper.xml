@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.itShuai.mapper.AccountMapper">
+
+    <select id="LoginAsUser" resultType="com.itShuai.pojo.Account">
+        select * from account where Phone=#{Phone} and Password=#{Password};
+    </select>
+
+</mapper>

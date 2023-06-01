@@ -1,10 +1,13 @@
 package com.itShuai.web.User;
 
 import com.alibaba.fastjson.JSON;
+import com.itShuai.pojo.Account;
 import com.itShuai.pojo.Admin;
 import com.itShuai.pojo.User;
+import com.itShuai.service.AccountService;
 import com.itShuai.service.AdminService;
 import com.itShuai.service.UserService;
+import com.itShuai.service.impl.AccountServiceImpl;
 import com.itShuai.service.impl.AdminServiceImpl;
 import com.itShuai.service.impl.UserServiceImpl;
 import com.itShuai.web.BaseServlet;
@@ -19,6 +22,7 @@ import java.util.List;
 public class SystemServlet extends BaseServlet {
     private UserService userService =new UserServiceImpl();
     private AdminService adminService = new AdminServiceImpl();
+    private AccountService accountService = new AccountServiceImpl();
 
     public void selectById(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String allowedOrigin = "*";
@@ -52,6 +56,23 @@ public class SystemServlet extends BaseServlet {
             response.getWriter().write("null");
         }else {
             String jsonString = JSON.toJSONString(admin);
+            response.setContentType("application/json;charset=utf-8");
+            response.getWriter().write(jsonString);
+        }
+    }
+    public void LoginAsUser(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        //解决跨域请求
+        String allowedOrigin = "*";
+        response.setHeader("Access-Control-Allow-Origin", allowedOrigin);
+        response.setHeader("Access-Control-Allow-Methods", "GET, POST");
+        response.setHeader("Access-Control-Allow-Headers", "Content-Type");
+        response.setHeader("Access-Control-Max-Age", "3600");
+        Account account = accountService.LoginAsUser(request.getParameter("Phone"),request.getParameter("Password"));
+        System.out.println(account);
+        if (account==null){
+            response.getWriter().write("null");
+        }else {
+            String jsonString = JSON.toJSONString(account);
             response.setContentType("application/json;charset=utf-8");
             response.getWriter().write(jsonString);
         }

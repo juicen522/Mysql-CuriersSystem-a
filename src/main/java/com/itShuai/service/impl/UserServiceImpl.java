@@ -22,18 +22,18 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public Account LoginAsUser(String Phone, String Password) {
+    public User LoginAsUser(String Phone, String Password) {
         SqlSession sqlSession = sqlSessionFactory.openSession();
         UserMapper mapper = sqlSession.getMapper(UserMapper.class);
         return mapper.LoginAsUser(Phone,Password);
     }
 
     @Override
-    public User RegisterUserAccount(String Sex, String Name, String Address, String Phone, String Password) {
+    public void RegisterUserAccount(String Sex, String Name, String Address, String Phone, String Password) {
         SqlSession sqlSession = sqlSessionFactory.openSession();
         UserMapper mapper = sqlSession.getMapper(UserMapper.class);
-        return mapper.RegisterUserAccount(Sex,Name,Address,Phone,Password);
-
+        mapper.RegisterUserAccount(Sex,Name,Address,Phone,Password);
+        sqlSession.commit();
     }
 
     @Override

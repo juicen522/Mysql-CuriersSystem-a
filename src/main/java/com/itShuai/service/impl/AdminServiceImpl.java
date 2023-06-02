@@ -41,5 +41,6 @@ public class AdminServiceImpl implements AdminService {
         SqlSession sqlSession = sqlSessionFactory.openSession();
         AdminMapper mapper = sqlSession.getMapper(AdminMapper.class);
         mapper.ChangeDeliveryStatus(DeliveryId,DeliveryStatus);
+        sqlSession.commit();
     }
 }

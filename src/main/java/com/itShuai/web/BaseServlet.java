@@ -32,6 +32,7 @@ public class BaseServlet extends HttpServlet {
         try {
             Method method = aClass.getMethod(methodName, HttpServletRequest.class, HttpServletResponse.class);
             method.invoke(this, req, resp);
+
         } catch (NoSuchMethodException | IllegalAccessException | InvocationTargetException e) {
             e.printStackTrace();
         }

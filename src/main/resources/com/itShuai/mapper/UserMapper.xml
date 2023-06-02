@@ -11,11 +11,14 @@
     <select id="LoginAsUser" resultType="com.itShuai.pojo.User">
         select * from couriersystem.user where Phone=#{Phone} and Password=#{Password};
     </select>
-    <insert id="RegisterUserAccount">
-        insert into couriersystem.user(Sex, Name, Address,Phone,Password) values (#{Sex},#{Name},#{Address},#{Phone},#{Password});
-    </insert>
+    <insert id="RegisterUserAccount" >
+        insert into couriersystem.user(Sex, Name, Address,Phone,Password) values ( #{Sex}, #{Name}, #{Address}, #{Phone}, #{Password});
+</insert>
     <select id="AllRecDelivery" resultType="com.itShuai.pojo.Delivery">
         select * from delivery where RecipientId=#{RecipientId};
+    </select>
+    <select id="AllSendDelivery" resultType="com.itShuai.pojo.Delivery">
+        select * from delivery where RecipientId=#{SenderId};
     </select>
 
 </mapper>

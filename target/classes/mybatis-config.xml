@@ -17,7 +17,7 @@
             <dataSource type="POOLED">
                 <!--数据库连接信息-->
                 <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
-                <property name="url" value="jdbc:mysql://localhost:3306/couriersystem?characterEncoding=utf-8&amp;useUnicode=true"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/couriersystem?useUnicode=true&amp;characterEncoding=UTF-8"/>
                 <property name="username" value="root"/>
                 <property name="password" value="123456"/>
             </dataSource>

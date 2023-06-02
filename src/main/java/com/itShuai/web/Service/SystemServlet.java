@@ -38,6 +38,11 @@ public class SystemServlet extends BaseServlet {
         }
 
     }
+    public void RegisterUserAccount(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        //解决跨域请求
+        response = ResolveCrossdomainRequests(response);
+        userService.RegisterUserAccount(request.getParameter("Phone"),request.getParameter("Password"), request.getParameter("Name"), request.getParameter("Sex"), request.getParameter("Address") );
+    }
     public void LoginAsAdmin(HttpServletRequest request, HttpServletResponse response) throws IOException {
         //解决跨域请求
         response = ResolveCrossdomainRequests(response);

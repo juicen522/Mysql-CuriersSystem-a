@@ -20,5 +20,8 @@
     <select id="AllSendDelivery" resultType="com.itShuai.pojo.Delivery">
         select * from delivery where RecipientId=#{SenderId};
     </select>
+    <insert id="SendDelivery">
+        insert into couriersystem.delivery(SenderId, RecipientId, SenderAddress, RecipientAddress) values (#{SenderId},#{RecipientId},#{SenderAddress},#{RecipientAddress})
+    </insert>
 
 </mapper>

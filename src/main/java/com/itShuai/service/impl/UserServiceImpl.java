@@ -56,4 +56,11 @@ public class UserServiceImpl implements UserService {
         UserMapper mapper = sqlSession.getMapper(UserMapper.class);
         return mapper.SearchDeliveryById(DeliveryId);
     }
+
+    @Override
+    public void SendDelivery(Integer SenderId, Integer RecipientId, String SenderAddress, String RecipientAddress) {
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        UserMapper mapper = sqlSession.getMapper(UserMapper.class);
+        mapper.SendDelivery(SenderId,RecipientId,SenderAddress,RecipientAddress);
+    }
 }

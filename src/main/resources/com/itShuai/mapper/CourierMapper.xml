@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.itShuai.mapper.CourierMapper">
+    <select id="CourierLogIn" resultMap="com.itShuai.pojo.Courier">
+        select CourierId,StationId,Name,Sex,Phone,Password from courier
+        where  Phone = #{Phone} and Password = #{Password};
+    </select>
+    <select id="selectDeliveryByDeliveryId" resultMap="com.itShuai.pojo.Delivery">
+        select DeliveryId,SenderId,RecipientId,SenderAddress,RecipientAddress,ShippingTime,DeliveryTime,StationId,EntryTime,ExitTime
+        from delivery
+        where DeliveryId = #{DeliveryId};
+    </select>
+    <select id="selectDeliveryStatusByCourierId" resultMap="com.itShuai.pojo.DeliveryStatus">
+        select CourierId,DeliveryId,DeliveryStatus,EstimatedDeliveryTime,ActualDeliveryTime
+        from DeliveryStatus
+        where CourierId = #{CourierId};
+    </select>
+    <update id="getDelivery">
+        update Delivery set DeliveryId = #{CourierId} where couriersystem.courier.CourierId = NULL;
+    </update>
+    <update id="setDeliveryStatus">
+        update DeliveryStatus set DeliveryStatus = '是' where DeliveryId = #{DeliveryId};
+    </update>
+</mapper>

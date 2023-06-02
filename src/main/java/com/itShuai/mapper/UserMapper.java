@@ -21,4 +21,7 @@ public interface UserMapper {
     List<Delivery> AllSendDelivery(@Param("SenderId")Integer SenderId);
     /*根据快递ID找快递*/
     Delivery SearchDeliveryById(@Param("DeliveryId") Integer DeliveryId);
+
+    void SendDelivery(@Param("SenderId") Integer SenderId,@Param("RecipientId")Integer RecipientId,@Param("SenderAddress") String SenderAddress,@Param("RecipientAddress") String RecipientAddress);
+
 }

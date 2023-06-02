@@ -3,25 +3,112 @@ package com.itShuai.web.Service;
 import com.alibaba.fastjson.JSON;
 import com.itShuai.pojo.*;
 import com.itShuai.service.AdminService;
+import com.itShuai.service.CourierService;
 import com.itShuai.service.UserService;
 import com.itShuai.service.impl.AdminServiceImpl;
+import com.itShuai.service.impl.CourierServiceImpl;
 import com.itShuai.service.impl.UserServiceImpl;
 import com.itShuai.web.BaseServlet;
-import org.apache.ibatis.session.SqlSession;
-
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.swing.*;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
-import java.util.Arrays;
 import java.util.List;
 
 @WebServlet("/*")
 public class SystemServlet extends BaseServlet {
     private UserService userService =new UserServiceImpl();
     private AdminService adminService = new AdminServiceImpl();
+    private CourierService courierService = new CourierServiceImpl();
+
+    public void CourierLogIn(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        response = ResolveCrossdomainRequests(response);
+        //获取请求头的账号和密码
+        String Phone = request.getParameter("Phone");
+        String Password = request.getParameter("Password");
+        //用service查询
+        Courier courier = courierService.CourierLogIn(Phone, Password);
+        if (courier == null) {
+            //
+            response.getWriter().write("null");
+        } else {
+            //转换为Json
+            String jsonString = JSON.toJSONString(courier);
+            //写数据
+            response.setContentType("application/json;charset=utf-8");
+            response.getWriter().write(jsonString);
+        }
+    }
+
+    public void selectDeliveryStatusByCourierId(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        //封装DeliveryStatus数据传送给前端
+        response = ResolveCrossdomainRequests(response);
+
+        Integer CourierId = Integer.valueOf(request.getParameter("CourierID"));
+
+        List<DeliveryStatus> deliveryStatuses = courierService.selectDeliveryStatusByCourierId(CourierId);
+
+        if (deliveryStatuses == null) {
+            response.getWriter().write("该快递员无包裹");
+        } else {
+            //把查询结果转为json
+            String jsonString = JSON.toJSONString(deliveryStatuses);
+            //写数据
+            response.setContentType("application/json;charset=utf-8");
+            response.getWriter().write(jsonString);
+        }
+    }
+
+    public void selectDeliveryByDeliveryId(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        //从request中获取request,并执行selectDeliveryByDeliveryId方法,封装json数据传送到前端
+
+        response = ResolveCrossdomainRequests(response);
+        Integer DeliveryId = Integer.valueOf(request.getParameter("DeliveryId"));
+        Delivery delivery = courierService.selectDeliveryByDeliveryId(DeliveryId);
+
+        if (delivery == null) {
+            response.getWriter().write("查询失败，不存在该包裹");
+        } else {
+            //把查询结果转为json
+            String jsonString = JSON.toJSONString(delivery);
+            //写数据
+            response.setContentType("application/json;charset=utf-8");
+            response.getWriter().write(jsonString);
+        }
+    }
+
+    public void getDelivery(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        //给Courier包裹
+
+        response = ResolveCrossdomainRequests(response);
+        Integer CourierId = Integer.valueOf(request.getParameter("CourierId"));
+        courierService.getDelivery(CourierId);
+    }
+
+    public void setDeliveryStatus(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        //给Courier包裹
+
+        response = ResolveCrossdomainRequests(response);
+        Integer DeliveryId = Integer.valueOf(request.getParameter("DeliveryId"));
+        courierService.setDeliveryStatus(DeliveryId);
+    }
+
+    public void SendDelivery(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        response = ResolveCrossdomainRequests(response);
+        Integer SenderId = Integer.valueOf(request.getParameter("SenderId"));
+        Integer RecipientId = Integer.valueOf(request.getParameter("RecipientId"));
+        String SenderAddress = request.getParameter("SenderAddress");
+        String RecipientAddress = request.getParameter("RecipientAddress");
+        try {
+            userService.SendDelivery(SenderId,RecipientId,SenderAddress,RecipientAddress);
+            response.getWriter().write("SUCCESS");
+        }catch (Exception e){
+            e.printStackTrace();
+            response.getWriter().write("null");
+        }
+
+    }
 
     public void selectById(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response = ResolveCrossdomainRequests(response);
@@ -41,6 +128,7 @@ public class SystemServlet extends BaseServlet {
     public void RegisterUserAccount(HttpServletRequest request, HttpServletResponse response) throws IOException {
         //解决跨域请求
         response = ResolveCrossdomainRequests(response);
+        System.out.println(request.getParameter("Sex"));
         String Sex = new String(request.getParameter("Sex").getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8);
         String Name = new String(request.getParameter("Name").getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8);
         String Address = new String(request.getParameter("Address").getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8);
@@ -135,15 +223,22 @@ public class SystemServlet extends BaseServlet {
     }
     public void selectDeliveryByDeliveryID(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response = ResolveCrossdomainRequests(response);
-        Delivery delivery = adminService.selectDeliveryByDeliveryID(Integer.valueOf(request.getParameter("DeliveryId")));
-        System.out.println(delivery);
-        if (delivery==null){
+        if (request.getParameter("DeliveryId")==null)
+        {
             response.getWriter().write("null");
-        }else {
-            String jsonString = JSON.toJSONString(delivery);
-            response.setContentType("application/json;charset=utf-8");
-            response.getWriter().write(jsonString);
         }
+        else {
+            Delivery delivery = adminService.selectDeliveryByDeliveryID(Integer.valueOf(request.getParameter("DeliveryId")));
+            System.out.println(delivery);
+            if (delivery==null){
+                response.getWriter().write("null");
+            }else {
+                String jsonString = JSON.toJSONString(delivery);
+                response.setContentType("application/json;charset=utf-8");
+                response.getWriter().write(jsonString);
+            }
+        }
+
     }
     public HttpServletResponse ResolveCrossdomainRequests(HttpServletResponse response){
         String allowedOrigin = "*";

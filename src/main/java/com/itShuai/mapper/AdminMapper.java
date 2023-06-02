@@ -27,7 +27,12 @@ public interface AdminMapper {
     /*通过站点号选择站点，管理站点*/
     Station selectStationByStationId(@Param("StationId")Integer StationId);
     /*通过账号ID找出账号，管理账号*/
-    Account selectAccountByAccountId(@Param("AccountId") Integer AccountId);
+    User selectUserByUserId(@Param("UserId") Integer UserId);
+    void deleteDeliveryById(@Param("DeliveryId")Integer DeliveryId);
+    void DeleteUserById(@Param("UserId") Integer UserId);
+    void deleteDeliveryStatus(@Param("DeliveryId")Integer DeliveryId);
 
-
+    Courier selectCourierById(@Param("CourierId")Integer CourierId);
+    void updateCourierById(@Param("CourierId")Integer CourierId,@Param("Name")String Name,@Param("Sex")String Sex,@Param("Phone")String Phone,@Param("StationId")Integer StationId,@Param("Password")String Password);
+    void addCourier(@Param("Name")String Name,@Param("Sex")String Sex,@Param("Phone")String Phone,@Param("StationId")Integer StationId,@Param("Password")String Password);
 }

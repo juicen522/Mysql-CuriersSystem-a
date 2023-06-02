@@ -60,4 +60,12 @@ public class CourierServiceImpl implements CourierService {
         sqlSession.commit();
     }
 
+    @Override
+    public void deleteCourierById(Integer CourierId) {
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        CourierMapper mapper = sqlSession.getMapper(CourierMapper.class);
+        mapper.deleteCourierById(CourierId);
+        sqlSession.commit();
+    }
+
 }

@@ -24,4 +24,7 @@
     <update id="setDeliveryStatus">
         update DeliveryStatus set DeliveryStatus = '是' where DeliveryId = #{DeliveryId};
     </update>
+    <delete id="deleteCourierById">
+        delete from courier where CourierId=#{CourierId};
+    </delete>
 </mapper>

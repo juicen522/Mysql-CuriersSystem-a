@@ -62,5 +62,8 @@ public class UserServiceImpl implements UserService {
         SqlSession sqlSession = sqlSessionFactory.openSession();
         UserMapper mapper = sqlSession.getMapper(UserMapper.class);
         mapper.SendDelivery(SenderId,RecipientId,SenderAddress,RecipientAddress);
+        sqlSession.commit();
     }
+
+
 }

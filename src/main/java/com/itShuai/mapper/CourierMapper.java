@@ -15,4 +15,5 @@ public interface CourierMapper {
 
     void getDelivery(@Param("CourierId")Integer CourierId);
     void setDeliveryStatus(@Param("DeliveryId") Integer DeliveryId);
+    void deleteCourierById(@Param("CourierId") Integer CourierId);
 }

@@ -17,4 +17,25 @@
     <update id="ChangeDeliveryStatus">
         update couriersystem.deliverystatus set DeliveryStatus=#{DeliveryStatus} where DeliveryId=#{DeliveryId};
     </update>
+    <delete id="DeleteUserById">
+        delete from user where UserId=#{UserId};
+    </delete>
+    <select id="selectUserByUserId" resultType="com.itShuai.pojo.User">
+        select * from user where UserId=#{UserId}
+    </select>
+    <delete id="deleteDeliveryStatus">
+        delete from deliverystatus where DeliveryId=#{DeliveryId};
+    </delete>
+    <delete id="deleteDeliveryById">
+        delete from delivery where DeliveryId=#{DeliveryId};
+    </delete>
+    <select id="selectCourierById" resultType="com.itShuai.pojo.Courier">
+        select * from courier where CourierId=#{CourierId}
+    </select>
+    <update id="updateCourierById">
+        update courier set Name=#{Name},Sex=#{Sex},Phone=#{Phone},StationId=#{StationId},Password=#{Password} where CourierId=#{CourierId}
+    </update>
+    <insert id="addCourier">
+        insert into courier(Name, Sex, Phone, StationId, Password) values (#{Name},#{Sex},#{Phone},#{StationId},#{Password})
+    </insert>
 </mapper>

@@ -24,4 +24,5 @@ public interface UserMapper {
 
     void SendDelivery(@Param("SenderId") Integer SenderId,@Param("RecipientId")Integer RecipientId,@Param("SenderAddress") String SenderAddress,@Param("RecipientAddress") String RecipientAddress);
 
+
 }

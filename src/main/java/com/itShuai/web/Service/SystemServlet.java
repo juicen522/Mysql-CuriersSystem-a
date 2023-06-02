@@ -9,11 +9,15 @@ import com.itShuai.service.impl.AdminServiceImpl;
 import com.itShuai.service.impl.CourierServiceImpl;
 import com.itShuai.service.impl.UserServiceImpl;
 import com.itShuai.web.BaseServlet;
+import com.sun.org.apache.bcel.internal.generic.PUSH;
+
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.lang.annotation.ElementType;
 import java.nio.charset.StandardCharsets;
+import java.security.PublicKey;
 import java.util.List;
 
 @WebServlet("/*")
@@ -21,6 +25,110 @@ public class SystemServlet extends BaseServlet {
     private UserService userService =new UserServiceImpl();
     private AdminService adminService = new AdminServiceImpl();
     private CourierService courierService = new CourierServiceImpl();
+
+
+
+    public void addCourier(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        response = ResolveCrossdomainRequests(response);
+            String Name = request.getParameter("Name");
+            String Sex = request.getParameter("Sex");
+            String Phone = request.getParameter("Phone");
+            if (request.getParameter("StationId")==null)
+            {
+                response.getWriter().write("NULL");
+            }else {
+                Integer StationId = Integer.valueOf(request.getParameter("StationId"));
+                String Password = request.getParameter("Password");
+                try {
+                    adminService.addCourier(Name,Sex,Phone,StationId,Password);
+                    response.getWriter().write("SUCCESS");
+                }catch (Exception e){
+                    e.printStackTrace();
+                    response.getWriter().write("ERROR");
+                }
+
+            }
+    }
+    public void updateCourierById(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        response = ResolveCrossdomainRequests(response);
+        if(request.getParameter("CourierId")==null){
+            response.getWriter().write("NULL");
+        }else{
+            Integer CourierId = Integer.valueOf(request.getParameter("CourierId"));
+            String Name = request.getParameter("Name");
+            String Sex = request.getParameter("Sex");
+            String Phone = request.getParameter("Phone");
+            if (request.getParameter("StationId")==null)
+            {
+                response.getWriter().write("NULL");
+            }else {
+                Integer StationId = Integer.valueOf(request.getParameter("StationId"));
+                String Password = request.getParameter("Password");
+                try {
+                    adminService.updateCourierById(CourierId,Name,Sex,Phone,StationId,Password);
+                    response.getWriter().write("SUCCESS");
+                }catch (Exception e){
+                    e.printStackTrace();
+                    response.getWriter().write("ERROR");
+                }
+
+            }
+        }
+    }
+    public void selectCourierById(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        response = ResolveCrossdomainRequests(response);
+        if(request.getParameter("CourierId")==null){
+            response.getWriter().write("NULL");
+        }else{
+            Integer CourierId = Integer.valueOf(request.getParameter("CourierId"));
+
+            Courier  courier = adminService.selectCourierById(CourierId);
+
+            if (courier == null) {
+                response.getWriter().write("NULL");
+            } else {
+                //把查询结果转为json
+                String jsonString = JSON.toJSONString(courier);
+                //写数据
+                response.setContentType("application/json;charset=utf-8");
+                response.getWriter().write(jsonString);
+            }
+        }
+
+    }
+
+    public void deleteDeliveryById(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        response = ResolveCrossdomainRequests(response);
+        if (request.getParameter("DeliveryId")==null){
+            response.getWriter().write("NULL");
+        }else {
+            Integer DeliveryId = Integer.valueOf(request.getParameter("DeliveryId"));
+            try {
+                adminService.deleteDeliveryById(DeliveryId);
+                response.getWriter().write("SUCCESS");
+            }catch (Exception e){
+                e.printStackTrace();
+                response.getWriter().write("ERROR");
+            }
+
+        }
+    }
+    public void deleteDeliveryStatus(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        response = ResolveCrossdomainRequests(response);
+        if (request.getParameter("DeliveryId")==null){
+            response.getWriter().write("NULL");
+        }else {
+            Integer DeliveryId = Integer.valueOf(request.getParameter("DeliveryId"));
+            try {
+                adminService.deleteDeliveryStatus(DeliveryId);
+                response.getWriter().write("SUCCESS");
+            }catch (Exception e){
+                e.printStackTrace();
+                response.getWriter().write("ERROR");
+            }
+
+        }
+    }
 
     public void CourierLogIn(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response = ResolveCrossdomainRequests(response);
@@ -98,8 +206,8 @@ public class SystemServlet extends BaseServlet {
         response = ResolveCrossdomainRequests(response);
         Integer SenderId = Integer.valueOf(request.getParameter("SenderId"));
         Integer RecipientId = Integer.valueOf(request.getParameter("RecipientId"));
-        String SenderAddress = request.getParameter("SenderAddress");
-        String RecipientAddress = request.getParameter("RecipientAddress");
+        String SenderAddress = new String(request.getParameter("SenderAddress").getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8);
+        String RecipientAddress = new String(request.getParameter("RecipientAddress").getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8);
         try {
             userService.SendDelivery(SenderId,RecipientId,SenderAddress,RecipientAddress);
             response.getWriter().write("SUCCESS");
@@ -107,7 +215,42 @@ public class SystemServlet extends BaseServlet {
             e.printStackTrace();
             response.getWriter().write("null");
         }
+    }
+    public void DeleteUserById(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        response = ResolveCrossdomainRequests(response);
+        Integer UserId = Integer.valueOf(request.getParameter("UserId"));
+        try {
+            adminService.DeleteUserById(UserId);
+            response.getWriter().write("SUCCESS DELETE");
+        }catch (Exception e){
+            e.printStackTrace();
+            response.getWriter().write("ERROR");
+        }
 
+    }
+    public void selectUserByUserId(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        response = ResolveCrossdomainRequests(response);
+        Integer UserId = Integer.valueOf(request.getParameter("UserId"));
+        User user = adminService.selectUserByUserId(UserId);
+        if (user==null){
+            response.getWriter().write("NULL");
+        }else {
+            String jsonString = JSON.toJSONString(user);
+//            写数据
+            response.setContentType("application/json;charset=utf-8");
+            response.getWriter().write(jsonString);
+        }
+    }
+    public void deleteCourierById(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        response = ResolveCrossdomainRequests(response);
+        Integer CourierId = Integer.valueOf(request.getParameter("CourierId"));
+        try {
+            courierService.deleteCourierById(CourierId);
+            response.getWriter().write("SUCCESS DELETE");
+        }catch (Exception e){
+            e.printStackTrace();
+            response.getWriter().write("ERROR");
+        }
     }
 
     public void selectById(HttpServletRequest request, HttpServletResponse response) throws IOException {

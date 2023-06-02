@@ -28,7 +28,7 @@ public class SystemServlet extends BaseServlet {
         User user = userService.selectUserId(Integer.valueOf(request.getParameter("id")));
         System.out.println(user);
         if(user == null){
-            response.getWriter().write(" ");
+            response.getWriter().write("null");
         }else {
 //            数据转换为json
             String jsonString = JSON.toJSONString(user);
@@ -41,7 +41,16 @@ public class SystemServlet extends BaseServlet {
     public void RegisterUserAccount(HttpServletRequest request, HttpServletResponse response) throws IOException {
         //解决跨域请求
         response = ResolveCrossdomainRequests(response);
-        userService.RegisterUserAccount(request.getParameter("Phone"),request.getParameter("Password"), request.getParameter("Name"), request.getParameter("Sex"), request.getParameter("Address") );
+        User user =  userService.RegisterUserAccount(request.getParameter("Phone"),request.getParameter("Password"), request.getParameter("Name"), request.getParameter("Sex"), request.getParameter("Address") );
+        if(user == null){
+            response.getWriter().write("null");
+        }else {
+//            数据转换为json
+            String jsonString = JSON.toJSONString(user);
+//            写数据
+            response.setContentType("application/json;charset=utf-8");
+            response.getWriter().write(jsonString);
+        }
     }
     public void LoginAsAdmin(HttpServletRequest request, HttpServletResponse response) throws IOException {
         //解决跨域请求

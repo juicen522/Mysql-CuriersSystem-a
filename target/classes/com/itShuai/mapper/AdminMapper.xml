@@ -12,7 +12,7 @@
         select * from couriersystem.delivery;
     </select>
     <select id="selectDeliveryByDeliveryID" resultType="com.itShuai.pojo.Delivery">
-        select * from couriersystem.delivery,couriersystem.deliverystatus where delivery.DeliveryId=deliverystatus.DeliveryId and delivery.DeliveryId=#{DeliveryId};
+        select * from couriersystem.delivery where delivery.DeliveryId=#{DeliveryId};
     </select>
 
 </mapper>

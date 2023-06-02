@@ -8,12 +8,11 @@
     <select id="selectUserId" resultType="com.itShuai.pojo.User">
         select * from user where UserId=#{UserId};
     </select>
-    <select id="LoginAsUser" resultType="com.itShuai.pojo.Account">
-        select * from account where Phone=#{Phone} and Password=#{Password};
+    <select id="LoginAsUser" resultType="com.itShuai.pojo.User">
+        select * from user where Phone=#{Phone} and Password=#{Password};
     </select>
     <insert id="RegisterUserAccount">
-        insert into user(sex, name, address) VALUES (#{Sex},#{Name},#{Address});
-        insert into account (Phone,Password,UserId) values(#{Phone},#{Password},#{UserId});
+        insert into user(Sex, Name, Address,Phone,Password) values (#{Sex},#{Name},#{Address},#{Phone},#{Phone});
     </insert>
     <select id="AllRecDelivery" resultType="com.itShuai.pojo.Delivery">
         select * from delivery where RecipientId=#{RecipientId};

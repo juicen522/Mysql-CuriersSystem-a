@@ -30,10 +30,10 @@ public class CourierServiceImpl implements CourierService {
     }
 
     @Override
-    public List<DeliveryStatus> selectDeliveryStatusByCourierId(Integer CourierId) {
+    public List<DeliveryStatus>  selectDeliveryStatusByCourierId(Integer CourierId) {
        SqlSession sqlSession = sqlSessionFactory.openSession();
        CourierMapper mapper = sqlSession.getMapper(CourierMapper.class);
-       List<DeliveryStatus> deliveryStatus = mapper.selectDeliveryStatusByCourierId(CourierId);
+        List<DeliveryStatus>  deliveryStatus = mapper.selectDeliveryStatusByCourierId(CourierId);
        return deliveryStatus;
     }
 

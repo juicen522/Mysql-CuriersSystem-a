@@ -12,7 +12,7 @@
         select * from couriersystem.delivery;
     </select>
     <select id="selectDeliveryByDeliveryID" resultType="com.itShuai.pojo.Delivery">
-        select * from couriersystem.delivery where delivery.DeliveryId=#{DeliveryId};
+        select * from couriersystem.delivery,user where delivery.DeliveryId=#{DeliveryId};
     </select>
     <update id="ChangeDeliveryStatus">
         update couriersystem.deliverystatus set DeliveryStatus=#{DeliveryStatus} where DeliveryId=#{DeliveryId};

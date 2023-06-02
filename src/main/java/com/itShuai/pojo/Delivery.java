@@ -15,6 +15,7 @@ public class Delivery {
     private String StationId;
     private LocalDateTime EntryTime;
     private LocalDateTime ExitTime;
+    private String Name;
 
     @Override
     public String toString() {
@@ -29,7 +30,16 @@ public class Delivery {
                 ", StationId='" + StationId + '\'' +
                 ", EntryTime=" + EntryTime +
                 ", ExitTime=" + ExitTime +
+                ", Name='" + Name + '\'' +
                 '}';
+    }
+
+    public String getName() {
+        return Name;
+    }
+
+    public void setName(String name) {
+        Name = name;
     }
 
     public Integer getDeliveryId() {

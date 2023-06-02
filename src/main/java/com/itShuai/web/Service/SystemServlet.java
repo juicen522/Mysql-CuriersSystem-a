@@ -45,9 +45,9 @@ public class SystemServlet extends BaseServlet {
         //封装DeliveryStatus数据传送给前端
         response = ResolveCrossdomainRequests(response);
 
-        Integer CourierId = Integer.valueOf(request.getParameter("CourierID"));
+        Integer CourierId = Integer.valueOf(request.getParameter("CourierId"));
 
-        List<DeliveryStatus> deliveryStatuses = courierService.selectDeliveryStatusByCourierId(CourierId);
+        List<DeliveryStatus>  deliveryStatuses = courierService.selectDeliveryStatusByCourierId(CourierId);
 
         if (deliveryStatuses == null) {
             response.getWriter().write("该快递员无包裹");

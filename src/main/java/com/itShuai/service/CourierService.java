@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface CourierService {
     Courier CourierLogIn(String Phone, String Password);
-    List<DeliveryStatus> selectDeliveryStatusByCourierId(Integer CourierId);
+    List<DeliveryStatus>  selectDeliveryStatusByCourierId(Integer CourierId);
 
     Delivery selectDeliveryByDeliveryId(Integer DeliveryId);
 

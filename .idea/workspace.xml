@@ -10,26 +10,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9216ab9d-340e-4d7e-a184-7995d44c7dae" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/itShuai/service/CourierService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/itShuai/service/impl/CourierServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/itShuai/mapper/CourierMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itShuai/mapper/CourierMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/itShuai/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itShuai/mapper/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/itShuai/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itShuai/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/itShuai/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itShuai/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/itShuai/pojo/Delivery.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itShuai/pojo/Delivery.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/itShuai/service/CourierService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itShuai/service/CourierService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/itShuai/service/impl/CourierServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itShuai/service/impl/CourierServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/itShuai/web/Service/SystemServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itShuai/web/Service/SystemServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/itShuai/mapper/DeliveryMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/itShuai/mapper/CourierMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/itShuai/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/itShuai/mapper/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itShuai/mapper/CourierMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itShuai/mapper/CourierMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itShuai/mapper/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itShuai/mapper/UserMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itShuai/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itShuai/mapper/UserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itShuai/service/AdminService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itShuai/service/AdminService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itShuai/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itShuai/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itShuai/service/impl/AdminServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itShuai/service/impl/AdminServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itShuai/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itShuai/service/impl/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itShuai/web/BaseServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itShuai/web/BaseServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/tomcat/logs/access_log.2023-05-31" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/itShuai/mapper/AdminMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/itShuai/mapper/AdminMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/itShuai/mapper/CourierMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/itShuai/mapper/CourierMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itShuai/mapper/AdminMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itShuai/mapper/AdminMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itShuai/pojo/Delivery.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itShuai/pojo/Delivery.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -297,7 +288,7 @@
       <workItem from="1685627258643" duration="111000" />
       <workItem from="1685632116557" duration="279000" />
       <workItem from="1685665713342" duration="4865000" />
-      <workItem from="1685670634448" duration="15900000" />
+      <workItem from="1685670634448" duration="18263000" />
     </task>
     <task id="LOCAL-00001" summary="测试提交">
       <created>1685516162377</created>
@@ -411,7 +402,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685687015400</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="快递员功能实现">
+      <created>1685694339613</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1685694339613</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -441,7 +439,8 @@
     <MESSAGE value="根据收快递人ID获取全部快递" />
     <MESSAGE value="数据库更改，管理员实现获得所有快递信息" />
     <MESSAGE value="用户注册功能" />
-    <option name="LAST_COMMIT_MESSAGE" value="用户注册功能" />
+    <MESSAGE value="快递员功能实现" />
+    <option name="LAST_COMMIT_MESSAGE" value="快递员功能实现" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

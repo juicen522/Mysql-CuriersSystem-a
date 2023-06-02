@@ -8,6 +8,11 @@
     <select id="LoginAsAdmin" resultType="com.itShuai.pojo.Admin">
         select * from couriersystem.admin where Account=#{Account} and Password=#{Password};
     </select>
-
+    <select id="FindAllDelivery" resultType="com.itShuai.pojo.Delivery">
+        select * from couriersystem.delivery;
+    </select>
+    <select id="selectDeliveryByDeliveryID" resultType="com.itShuai.pojo.Delivery">
+        select * from couriersystem.delivery,couriersystem.deliverystatus where delivery.DeliveryId=deliverystatus.DeliveryId and delivery.DeliveryId=#{DeliveryId};
+    </select>
 
 </mapper>

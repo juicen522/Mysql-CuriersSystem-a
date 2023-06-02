@@ -7,6 +7,8 @@ public class User {
     private String Sex;
     private String Name;
     private String Address;
+    private String Phone;
+    private String Password;
 
     @Override
     public String toString() {
@@ -15,7 +17,25 @@ public class User {
                 ", Sex='" + Sex + '\'' +
                 ", Name='" + Name + '\'' +
                 ", Address='" + Address + '\'' +
+                ", Phone='" + Phone + '\'' +
+                ", Password='" + Password + '\'' +
                 '}';
+    }
+
+    public String getPhone() {
+        return Phone;
+    }
+
+    public void setPhone(String phone) {
+        Phone = phone;
+    }
+
+    public String getPassword() {
+        return Password;
+    }
+
+    public void setPassword(String password) {
+        Password = password;
     }
 
     public Integer getUserId() {

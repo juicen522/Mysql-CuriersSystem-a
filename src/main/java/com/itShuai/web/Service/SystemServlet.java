@@ -75,6 +75,30 @@ public class SystemServlet extends BaseServlet {
             response.getWriter().write(jsonString);
         }
     }
+    public void FindAllDelivery(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        response = ResolveCrossdomainRequests(response);
+        List<Delivery> deliveries = adminService.FindAllDelivery();
+        System.out.println(deliveries);
+        if (deliveries.isEmpty()){
+            response.getWriter().write("null");
+        }else {
+            String jsonString = JSON.toJSONString(deliveries);
+            response.setContentType("application/json;charset=utf-8");
+            response.getWriter().write(jsonString);
+        }
+    }
+    public void selectDeliveryByDeliveryID(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        response = ResolveCrossdomainRequests(response);
+        Delivery delivery = adminService.selectDeliveryByDeliveryID(Integer.valueOf(request.getParameter("DeliveryId")));
+        System.out.println(delivery);
+        if (delivery==null){
+            response.getWriter().write("null");
+        }else {
+            String jsonString = JSON.toJSONString(delivery);
+            response.setContentType("application/json;charset=utf-8");
+            response.getWriter().write(jsonString);
+        }
+    }
     public HttpServletResponse ResolveCrossdomainRequests(HttpServletResponse response){
         String allowedOrigin = "*";
         response.setHeader("Access-Control-Allow-Origin", allowedOrigin);

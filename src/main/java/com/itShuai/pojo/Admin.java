@@ -5,6 +5,7 @@ public class Admin {
     private String Password;
     private String Phone;
     private String Account;
+    private String Name;
 
     @Override
     public String toString() {
@@ -13,7 +14,16 @@ public class Admin {
                 ", Password='" + Password + '\'' +
                 ", Phone='" + Phone + '\'' +
                 ", Account='" + Account + '\'' +
+                ", Name='" + Name + '\'' +
                 '}';
+    }
+
+    public String getName() {
+        return Name;
+    }
+
+    public void setName(String name) {
+        Name = name;
     }
 
     public Integer getAdminId() {

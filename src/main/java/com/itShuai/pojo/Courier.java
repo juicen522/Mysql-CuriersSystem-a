@@ -6,6 +6,7 @@ public class Courier {
     private String Name;
     private String Sex;
     private String Phone;
+    private String Password;
 
     @Override
     public String toString() {
@@ -15,7 +16,16 @@ public class Courier {
                 ", Name='" + Name + '\'' +
                 ", Sex='" + Sex + '\'' +
                 ", Phone='" + Phone + '\'' +
+                ", Password='" + Password + '\'' +
                 '}';
+    }
+
+    public String getPassword() {
+        return Password;
+    }
+
+    public void setPassword(String password) {
+        Password = password;
     }
 
     public Integer getCourierId() {

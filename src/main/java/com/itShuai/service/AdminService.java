@@ -11,4 +11,5 @@ public interface AdminService {
     Admin LoginAsAdmin(String Account,String Password);
     List<Delivery> FindAllDelivery();
     Delivery selectDeliveryByDeliveryID(@Param("DeliveryId") Integer DeliveryId);
+    void ChangeDeliveryStatus(@Param("DeliveryId") Integer DeliveryId,@Param("DeliveryStatus") String DeliveryStatus);
 }

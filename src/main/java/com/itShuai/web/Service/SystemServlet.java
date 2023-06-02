@@ -41,7 +41,7 @@ public class SystemServlet extends BaseServlet {
     public void RegisterUserAccount(HttpServletRequest request, HttpServletResponse response) throws IOException {
         //解决跨域请求
         response = ResolveCrossdomainRequests(response);
-        User user =  userService.RegisterUserAccount(request.getParameter("Phone"),request.getParameter("Password"), request.getParameter("Name"), request.getParameter("Sex"), request.getParameter("Address") );
+        User user =  userService.RegisterUserAccount(request.getParameter("Sex"),request.getParameter("Name"), request.getParameter("Address"), request.getParameter("Phone"), request.getParameter("Password") );
         if(user == null){
             response.getWriter().write("null");
         }else {
@@ -57,6 +57,7 @@ public class SystemServlet extends BaseServlet {
         response = ResolveCrossdomainRequests(response);
         Admin admin = adminService.LoginAsAdmin(request.getParameter("Account"),request.getParameter("Password"));
         System.out.println(admin);
+        System.out.println(request.getParameter("Account")+request.getParameter("Password"));
         if (admin==null){
             response.getWriter().write("null");
         }else {
@@ -76,6 +77,10 @@ public class SystemServlet extends BaseServlet {
             response.setContentType("application/json;charset=utf-8");
             response.getWriter().write(jsonString);
         }
+    }
+    public void ChangeDeliveryStatus(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        response = ResolveCrossdomainRequests(response);
+
     }
     public void AllRecDelivery(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response = ResolveCrossdomainRequests(response);

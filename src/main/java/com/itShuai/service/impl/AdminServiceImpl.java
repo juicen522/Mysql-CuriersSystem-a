@@ -35,4 +35,11 @@ public class AdminServiceImpl implements AdminService {
         AdminMapper mapper = sqlSession.getMapper(AdminMapper.class);
         return mapper.selectDeliveryByDeliveryID(DeliveryId);
     }
+
+    @Override
+    public void ChangeDeliveryStatus(Integer DeliveryId, String DeliveryStatus) {
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        AdminMapper mapper = sqlSession.getMapper(AdminMapper.class);
+        mapper.ChangeDeliveryStatus(DeliveryId,DeliveryStatus);
+    }
 }

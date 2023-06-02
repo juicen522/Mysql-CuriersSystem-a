@@ -6,13 +6,13 @@
 <mapper namespace="com.itShuai.mapper.UserMapper">
 
     <select id="selectUserId" resultType="com.itShuai.pojo.User">
-        select * from user where UserId=#{UserId};
+        select * from couriersystem.user where UserId=#{UserId};
     </select>
     <select id="LoginAsUser" resultType="com.itShuai.pojo.User">
-        select * from user where Phone=#{Phone} and Password=#{Password};
+        select * from couriersystem.user where Phone=#{Phone} and Password=#{Password};
     </select>
     <insert id="RegisterUserAccount">
-        insert into user(Sex, Name, Address,Phone,Password) values (#{Sex},#{Name},#{Address},#{Phone},#{Phone});
+        insert into couriersystem.user(Sex, Name, Address,Phone,Password) values (#{Sex},#{Name},#{Address},#{Phone},#{Password});
     </insert>
     <select id="AllRecDelivery" resultType="com.itShuai.pojo.Delivery">
         select * from delivery where RecipientId=#{RecipientId};

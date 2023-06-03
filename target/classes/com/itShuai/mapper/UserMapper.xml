@@ -6,22 +6,22 @@
 <mapper namespace="com.itShuai.mapper.UserMapper">
 
     <select id="selectUserId" resultType="com.itShuai.pojo.User">
-        select * from couriersystem.user where UserId=#{UserId};
+        select * from user where UserId=#{UserId};
     </select>
     <select id="LoginAsUser" resultType="com.itShuai.pojo.User">
-        select * from couriersystem.user where Phone=#{Phone} and Password=#{Password};
+        select * from user where Phone=#{Phone} and Password=#{Password};
     </select>
     <insert id="RegisterUserAccount" >
-        insert into couriersystem.user(Sex, Name, Address,Phone,Password) values ( #{Sex}, #{Name}, #{Address}, #{Phone}, #{Password});
+        insert into user(Sex, Name, Address,Phone,Password) values ( #{Sex}, #{Name}, #{Address}, #{Phone}, #{Password});
 </insert>
     <select id="AllRecDelivery" resultType="com.itShuai.pojo.Delivery">
         select * from delivery where RecipientId=#{RecipientId};
     </select>
     <select id="AllSendDelivery" resultType="com.itShuai.pojo.Delivery">
-        select * from delivery where RecipientId=#{SenderId};
+        select * from delivery where SenderId=#{SenderId};
     </select>
     <insert id="SendDelivery">
-        insert into couriersystem.delivery(SenderId, RecipientId, SenderAddress, RecipientAddress) values (#{SenderId},#{RecipientId},#{SenderAddress},#{RecipientAddress})
+        insert into delivery(SenderId, RecipientId, SenderAddress, RecipientAddress) values (#{SenderId},#{RecipientId},#{SenderAddress},#{RecipientAddress})
     </insert>
 
 </mapper>

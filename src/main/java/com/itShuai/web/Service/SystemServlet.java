@@ -9,7 +9,7 @@ import com.itShuai.service.impl.AdminServiceImpl;
 import com.itShuai.service.impl.CourierServiceImpl;
 import com.itShuai.service.impl.UserServiceImpl;
 import com.itShuai.web.BaseServlet;
-import com.sun.org.apache.bcel.internal.generic.PUSH;
+
 
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -27,18 +27,34 @@ public class SystemServlet extends BaseServlet {
     private CourierService courierService = new CourierServiceImpl();
 
 
-
+    public void selectDeliveryStatusById(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        response = ResolveCrossdomainRequests(response);
+        if (request.getParameter("DeliveryId")==null){
+            response.getWriter().write("error");
+        }else {
+            Integer DeliveryId = Integer.valueOf(request.getParameter("DeliveryId"));
+            DeliveryStatus deliveryStatus =  adminService.selectDeliveryStatusById(DeliveryId);
+            if (deliveryStatus==null){
+                response.getWriter().write("null");
+            }else {
+                String jsonString = JSON.toJSONString(deliveryStatus);
+                //写数据
+                response.setContentType("application/json;charset=utf-8");
+                response.getWriter().write(jsonString);
+            }
+        }
+    }
     public void addCourier(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response = ResolveCrossdomainRequests(response);
-            String Name = request.getParameter("Name");
-            String Sex = request.getParameter("Sex");
-            String Phone = request.getParameter("Phone");
+            String Name =  new String(request.getParameter("Name").getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8);
+            String Sex =  new String(request.getParameter("Sex").getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8);
+            String Phone = new String(request.getParameter("Phone").getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8);
             if (request.getParameter("StationId")==null)
             {
                 response.getWriter().write("NULL");
             }else {
                 Integer StationId = Integer.valueOf(request.getParameter("StationId"));
-                String Password = request.getParameter("Password");
+                String Password = new String(request.getParameter("Password").getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8);
                 try {
                     adminService.addCourier(Name,Sex,Phone,StationId,Password);
                     response.getWriter().write("SUCCESS");
@@ -55,15 +71,15 @@ public class SystemServlet extends BaseServlet {
             response.getWriter().write("NULL");
         }else{
             Integer CourierId = Integer.valueOf(request.getParameter("CourierId"));
-            String Name = request.getParameter("Name");
-            String Sex = request.getParameter("Sex");
-            String Phone = request.getParameter("Phone");
+            String Name = new String(request.getParameter("Name").getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8);
+            String Sex =  new String(request.getParameter("Sex").getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8);
+            String Phone = new String(request.getParameter("Phone").getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8);
             if (request.getParameter("StationId")==null)
             {
                 response.getWriter().write("NULL");
             }else {
                 Integer StationId = Integer.valueOf(request.getParameter("StationId"));
-                String Password = request.getParameter("Password");
+                String Password = new String(request.getParameter("Password").getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8);
                 try {
                     adminService.updateCourierById(CourierId,Name,Sex,Phone,StationId,Password);
                     response.getWriter().write("SUCCESS");
@@ -148,14 +164,31 @@ public class SystemServlet extends BaseServlet {
             response.getWriter().write(jsonString);
         }
     }
-
-    public void selectDeliveryStatusByCourierId(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    public void AllSendDelivery(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        //封装DeliveryStatus数据传送给前端
+        response = ResolveCrossdomainRequests(response);
+        if (request.getParameter("UserId")==null){
+            response.getWriter().write("null");
+        }else {
+            Integer UserId = Integer.valueOf(request.getParameter("UserId"));
+            List<Delivery> deliveries = userService.AllSendDelivery(UserId);
+            if (deliveries.isEmpty()){
+                response.getWriter().write("无包裹");
+            }else {
+                String jsonString = JSON.toJSONString(deliveries);
+                //写数据
+                response.setContentType("application/json;charset=utf-8");
+                response.getWriter().write(jsonString);
+            }
+        }
+    }
+    public void selectDeliveryStatusByDeliveryId(HttpServletRequest request, HttpServletResponse response) throws IOException {
         //封装DeliveryStatus数据传送给前端
         response = ResolveCrossdomainRequests(response);
 
-        Integer CourierId = Integer.valueOf(request.getParameter("CourierId"));
+        Integer DeliveryId = Integer.valueOf(request.getParameter("DeliveryId"));
 
-        List<DeliveryStatus>  deliveryStatuses = courierService.selectDeliveryStatusByCourierId(CourierId);
+        List<DeliveryStatus>  deliveryStatuses = courierService.selectDeliveryStatusByCourierId(DeliveryId);
 
         if (deliveryStatuses == null) {
             response.getWriter().write("该快递员无包裹");
@@ -317,30 +350,25 @@ public class SystemServlet extends BaseServlet {
     }
     public void ChangeDeliveryStatus(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response = ResolveCrossdomainRequests(response);
-        Integer DeliveryId = Integer.valueOf(request.getParameter("DeliveryId"));
-        String Status = new String(request.getParameter("DeliveryStatus").getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8);
-        try {
-            adminService.ChangeDeliveryStatus(DeliveryId,Status);
-            response.getWriter().write("SUCCESS UPDATE");
-        }catch (Exception e){
-            response.getWriter().write("ERROR");
+        System.out.println(request.getParameter("DeliveryId"));
+        if (request.getParameter("DeliveryId")==null)
+        {
+            response.getWriter().write("null");
+        }else {
+            Integer DeliveryId = Integer.valueOf(request.getParameter("DeliveryId"));
+            String Status = new String(request.getParameter("DeliveryStatus").getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8);
+            System.out.println(Status);
+            try {
+                adminService.ChangeDeliveryStatus(DeliveryId,Status);
+                response.getWriter().write("SUCCESS UPDATE");
+            }catch (Exception e){
+                response.getWriter().write("ERROR");
+            }
         }
 
 
     }
     public void AllRecDelivery(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        response = ResolveCrossdomainRequests(response);
-        List<Delivery> deliveries = userService.AllRecDelivery(Integer.valueOf(request.getParameter("UserId")));
-        System.out.println(deliveries);
-        if (deliveries.isEmpty()){
-            response.getWriter().write("null");
-        }else {
-            String jsonString = JSON.toJSONString(deliveries);
-            response.setContentType("application/json;charset=utf-8");
-            response.getWriter().write(jsonString);
-        }
-    }
-    public void AllSendDelivery(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response = ResolveCrossdomainRequests(response);
         List<Delivery> deliveries = userService.AllRecDelivery(Integer.valueOf(request.getParameter("UserId")));
         System.out.println(deliveries);

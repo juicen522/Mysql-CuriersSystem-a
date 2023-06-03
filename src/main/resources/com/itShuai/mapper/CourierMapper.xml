@@ -16,10 +16,10 @@
     <select id="selectDeliveryStatusByCourierId" resultType="com.itShuai.pojo.DeliveryStatus">
         select *
         from DeliveryStatus
-        where CourierId = #{CourierId};
+        where DeliveryId = #{DeliveryId};
     </select>
     <update id="getDelivery">
-        update Delivery set DeliveryId = #{CourierId} where couriersystem.courier.CourierId = NULL;
+        update deliverystatus set CourierId = #{CourierId} where CourierId is null;
     </update>
     <update id="setDeliveryStatus">
         update DeliveryStatus set DeliveryStatus = '是' where DeliveryId = #{DeliveryId};

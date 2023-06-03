@@ -3,10 +3,7 @@ package com.itShuai.service.impl;
 import com.itShuai.mapper.AdminMapper;
 import com.itShuai.mapper.DeliveryMapper;
 import com.itShuai.mapper.UserMapper;
-import com.itShuai.pojo.Admin;
-import com.itShuai.pojo.Courier;
-import com.itShuai.pojo.Delivery;
-import com.itShuai.pojo.User;
+import com.itShuai.pojo.*;
 import com.itShuai.service.AdminService;
 import com.itShuai.util.SqlSessionFactoryUtils;
 
@@ -90,6 +87,7 @@ public class AdminServiceImpl implements AdminService {
         SqlSession sqlSession = sqlSessionFactory.openSession();
         AdminMapper mapper = sqlSession.getMapper(AdminMapper.class);
         mapper.updateCourierById(CourierId,Name,Sex,Phone,StationId,Password);
+        sqlSession.commit();
     }
 
     @Override
@@ -97,6 +95,14 @@ public class AdminServiceImpl implements AdminService {
         SqlSession sqlSession = sqlSessionFactory.openSession();
         AdminMapper mapper = sqlSession.getMapper(AdminMapper.class);
         mapper.addCourier(Name,Sex,Phone,StationId,Password);
+        sqlSession.commit();
+    }
+
+    @Override
+    public DeliveryStatus selectDeliveryStatusById(Integer DeliveryId) {
+        SqlSession sqlSession = sqlSessionFactory.openSession();
+        AdminMapper mapper = sqlSession.getMapper(AdminMapper.class);
+        return mapper.selectDeliveryStatusById(DeliveryId);
     }
 
 

@@ -6,16 +6,16 @@
 <mapper namespace="com.itShuai.mapper.AdminMapper">
 
     <select id="LoginAsAdmin" resultType="com.itShuai.pojo.Admin">
-        select * from couriersystem.admin where Account=#{Account} and Password=#{Password};
+        select * from admin where Account=#{Account} and Password=#{Password};
     </select>
     <select id="FindAllDelivery" resultType="com.itShuai.pojo.Delivery">
-        select * from couriersystem.delivery;
+        select * from delivery;
     </select>
     <select id="selectDeliveryByDeliveryID" resultType="com.itShuai.pojo.Delivery">
-        select * from couriersystem.delivery,user where delivery.DeliveryId=#{DeliveryId} and user.UserId = delivery.RecipientId;
+        select * from delivery,user where DeliveryId=#{DeliveryId} and user.UserId = delivery.RecipientId;
     </select>
     <update id="ChangeDeliveryStatus">
-        update couriersystem.deliverystatus set DeliveryStatus=#{DeliveryStatus} where DeliveryId=#{DeliveryId};
+        update deliverystatus set DeliveryStatus=#{DeliveryStatus} where DeliveryId=#{DeliveryId};
     </update>
     <delete id="DeleteUserById">
         delete from user where UserId=#{UserId};
@@ -35,4 +35,10 @@
     <update id="updateCourierById">
         update courier set Name=#{Name},Sex=#{Sex},Phone=#{Phone},StationId=#{StationId},Password=#{Password} where CourierId=#{CourierId}
     </update>
+    <insert id="addCourier">
+        insert into courier(Name, Sex, Phone, StationId, Password) values (#{Name},#{Sex},#{Phone},#{StationId},#{Password})
+    </insert>
+    <select id="selectDeliveryStatusById" resultType="com.itShuai.pojo.DeliveryStatus">
+        select * from deliverystatus where DeliveryId=#{DeliveryId}
+    </select>
 </mapper>

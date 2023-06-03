@@ -13,21 +13,20 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/itShuai/mapper/AdminMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itShuai/mapper/AdminMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/itShuai/mapper/CourierMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itShuai/mapper/CourierMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/itShuai/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itShuai/mapper/UserMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/itShuai/service/AdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itShuai/service/AdminService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/itShuai/service/CourierService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itShuai/service/CourierService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/itShuai/service/impl/AdminServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itShuai/service/impl/AdminServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/itShuai/service/impl/CourierServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itShuai/service/impl/CourierServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/itShuai/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itShuai/service/impl/UserServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/itShuai/web/Service/SystemServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/itShuai/web/Service/SystemServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/itShuai/mapper/AdminMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/itShuai/mapper/AdminMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/itShuai/mapper/CourierMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/itShuai/mapper/CourierMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/itShuai/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/itShuai/mapper/UserMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/mybatis-config.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/itShuai/mapper/AdminMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itShuai/mapper/AdminMapper.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/itShuai/mapper/AdminMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itShuai/mapper/AdminMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itShuai/mapper/CourierMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itShuai/mapper/CourierMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/itShuai/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itShuai/mapper/UserMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/itShuai/service/AdminService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itShuai/service/AdminService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/itShuai/service/impl/AdminServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itShuai/service/impl/AdminServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/itShuai/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/itShuai/service/impl/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/mybatis-config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/mybatis-config.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -295,7 +294,9 @@
       <workItem from="1685627258643" duration="111000" />
       <workItem from="1685632116557" duration="279000" />
       <workItem from="1685665713342" duration="4865000" />
-      <workItem from="1685670634448" duration="27035000" />
+      <workItem from="1685670634448" duration="32149000" />
+      <workItem from="1685755243569" duration="7672000" />
+      <workItem from="1685772313307" duration="2084000" />
     </task>
     <task id="LOCAL-00001" summary="测试提交">
       <created>1685516162377</created>
@@ -423,7 +424,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685696411395</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="完整版1.0">
+      <created>1685712342680</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1685712342680</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -454,7 +462,8 @@
     <MESSAGE value="数据库更改，管理员实现获得所有快递信息" />
     <MESSAGE value="用户注册功能" />
     <MESSAGE value="快递员功能实现" />
-    <option name="LAST_COMMIT_MESSAGE" value="快递员功能实现" />
+    <MESSAGE value="完整版1.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="完整版1.0" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -1,9 +1,6 @@
 package com.itShuai.service;
 
-import com.itShuai.pojo.Admin;
-import com.itShuai.pojo.Courier;
-import com.itShuai.pojo.Delivery;
-import com.itShuai.pojo.User;
+import com.itShuai.pojo.*;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -21,5 +18,5 @@ public interface AdminService {
     Courier selectCourierById(@Param("CourierId")Integer CourierId);
     void updateCourierById(@Param("CourierId")Integer CourierId,@Param("Name")String Name,@Param("Sex")String Sex,@Param("Phone")String Phone,@Param("StationId")Integer StationId,@Param("Password")String Password);
     void addCourier(@Param("Name")String Name,@Param("Sex")String Sex,@Param("Phone")String Phone,@Param("StationId")Integer StationId,@Param("Password")String Password);
-
+    DeliveryStatus selectDeliveryStatusById(@Param("DeliveryId") Integer DeliveryId);
 }

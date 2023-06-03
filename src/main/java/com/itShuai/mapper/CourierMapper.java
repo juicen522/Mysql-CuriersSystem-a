@@ -9,7 +9,7 @@ import java.util.List;
 
 public interface CourierMapper {
     Courier CourierLogIn(@Param("Phone") String Phone, @Param("Password")String Password);
-    List<DeliveryStatus>  selectDeliveryStatusByCourierId(@Param("CourierId")Integer CourierId);
+    List<DeliveryStatus>  selectDeliveryStatusByCourierId(@Param("CourierId")Integer DeliveryId);
 
     Delivery selectDeliveryByDeliveryId(@Param("DeliveryId") Integer DeliveryId);
 
